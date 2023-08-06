@@ -145,6 +145,15 @@ func (m *Model) Dim() int {
 	return m.dim
 }
 
+// Dim returns the dimention of the vectors in the model.
+func (m *Model) Words() []string {
+	var result []string
+	for w, _ := range m.words {
+		result = append(result, w)
+	}
+	return result
+}
+
 // Mapper is an interface which defines a method which can return a mapping of
 // word -> Vector for each word in words.
 type Mapper interface {
